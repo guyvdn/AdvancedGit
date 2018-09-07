@@ -162,7 +162,53 @@ John Doe
 5. git alias
 
 ---
+
 <!-- footer: Advanced Git commands-->
+
+## git log
+<small><small>
+  
+Visualising the git history and branches is often an argument to use a git GUI tool but this can perfectly be done from the command line using `git log` with these commands:
+
+<small>
+  
+**--all**
+Shows all commits in the history of branches, tags and other refs
+
+**--graph**
+Text-based graphical representation of the commit history.
+
+**--pretty**  
+Pretty-print the contents of the commit logs.<br/>Can be oneline, short, medium, full, fuller, email, raw, format:\<string>
+
+**--abbrev-commit**
+Show partial prefix of the 40-byte hexadecimal commit object name.
+
+**--oneline**
+This is a shorthand for "--pretty=oneline --abbrev-commit" used together.
+
+</small></small></small>
+
+---
+
+##  `$ git log --graph --all --oneline` 
+
+# ![](images/vscode-log.png)
+
+---
+<small><small>
+  
+```console
+$ git log --graph --all ✂
+--pretty=format:"%C(auto)%d %s %C(yellow)%ad %C(cyan)<%an> %C(green)%h" ✂ 
+--date="format-local:%Y-%m-%d %H:%M:%S"
+```
+</small></small>
+  
+# ![](images/vscode-log-fancy.png)
+
+---
+
 
 ## git alias
 <small> 
