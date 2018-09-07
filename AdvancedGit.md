@@ -20,14 +20,14 @@ Advanced
 
 # Agenda
 
+<!-- *template: invert -->
+
 - **Properly configure Git**
 - Advanced Git commands 
 - Customize Git with Git Hooks
 - Further Reading
 
 ---
-
-<!-- *template: invert -->
 
 # Properly configure Git
 
@@ -141,6 +141,8 @@ John Doe
 </small>
 
 ---
+<!-- footer: -->
+<!-- *template: invert -->
 
 # Agenda
 
@@ -149,12 +151,84 @@ John Doe
 - Customize Git with Git Hooks
 - Further Reading
 
+---
 
+# Advanced Git commands
 
+1. git log
+2. git reset
+3. git rebase
+4. git worktree
+5. git alias
+
+---
+<!-- footer: Advanced Git commands-->
+
+## git alias
+<small> 
+  
+Now that we have seen some advanced commands we can make it easier to use them wit `git alias`. 
+
+For example, to correct the usability problem you encountered with unstaging a file you can add your own unstage alias to Git:
+
+```console
+$ git config --global alias.unstage 'reset HEAD --'
+```
+This makes the following two commands equivalent:
+
+```console
+$ git unstage fileA
+$ git reset HEAD -- fileA
+```
+</small>
 
 ---
 
+## git alias
+<small> 
+  
+Some more commands
+
+|Alias|Command|
+|-:|:-|
+|**s**        | status -sb
+|**last**     | log -1 HEAD
+|**tree**     | log --all --oneline --graph
+|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**branches** | branch -a
+|**stashes**  | stash list
+|**aliases**  | !git config -l \| grep alias \| cut -c 7- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+|**echo**     | !echo \"$1\" && :
+|**chs**	  | !git checkout && git s && :
+
+</small>
+
+---
+
+## git alias
+
+**Share aliases in team**
+
+You can put all aliases inside a separate config file
+
+```text
+[alias]
+  a = add
+  ..
+```
+
+Add this file to your `.config` file as such
+
+```text
+[include]
+    path = aliases.txt
+```
+
+---
+
+
 # Agenda
+<!-- footer: -->
+<!-- *template: invert -->
 
 - Properly configure Git
 - Advanced Git commands 
@@ -164,7 +238,7 @@ John Doe
 
 ---
 ## Further Reading
-<!-- footer: -->
+
 <small><small>
   
 **Git Reference Manual**<small>
