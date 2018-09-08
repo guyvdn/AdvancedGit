@@ -209,6 +209,41 @@ $ git log --graph --all ✂
 
 ---
 
+# git reset
+
+---
+
+## git reset - trees
+
+# ![](images/reset-workflow.png)
+
+---
+
+## git reset - commands
+
+git reset overwrites these trees in a specific order
+
+<small>
+  
+**git reset --soft**
+move the branch HEAD points to
+<small>*can be used to undo commits*</small>
+
+**git reset --mixed (default)**
+also make the Index look like HEAD
+<small>*can be used to unstage changes*</small>
+
+**git reset --hard**
+also make the Working Directory look HEAD
+<small>*can be used to undo changes*</small>
+
+</small>
+
+---
+
+## git reset - demo
+
+---
 
 ## git alias
 <small> 
