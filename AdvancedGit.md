@@ -157,7 +157,7 @@ John Doe
 
 1. git log
 2. git reset
-3. git rebase
+3. git rebase interactive
 4. git worktree
 5. git alias
 
@@ -211,6 +211,8 @@ $ git log --graph --all ✂
 
 # git reset
 
+### Can be used to undo changes that are ==local to your computer==
+
 ---
 
 ## git reset - trees
@@ -227,21 +229,129 @@ git reset overwrites these trees in a specific order
   
 **git reset --soft**
 move the branch HEAD points to
-<small>*can be used to undo commits*</small>
+==can be used to undo commits==
 
 **git reset --mixed (default)**
 also make the Index look like HEAD
-<small>*can be used to unstage changes*</small>
+==can be used to unstage changes==
 
 **git reset --hard**
 also make the Working Directory look HEAD
-<small>*can be used to undo changes*</small>
+==can be used to undo changes==
 
 </small>
 
 ---
 
 ## git reset - demo
+
+---
+
+# git rebase interactive
+
+**git rebase --interactive**
+**git rebase -i**
+
+Make a list of the commits which are about to be rebased. Let the user edit that list before rebasing.
+
+<small>
+  
+<br/><br/>
+ 
+```text
+Do not rebase commits that exist outside your repository.
+If you follow that guideline, you’ll be fine. 
+If you don’t, people will hate you.
+```
+
+</small>
+
+---
+
+## git-rebase-todo file
+
+<small><small>
+  
+```text
+pick 2a6ed8c v4
+pick d5a5839 v5
+pick 010a3f0 v6
+
+# Rebase fba439a..010a3f0 onto fba439a (3 commands)
+#
+# p, pick <commit> = use commit
+# r, reword <commit> = use commit, but edit the commit message
+# e, edit <commit> = use commit, but stop for amending
+# s, squash <commit> = use commit, but meld into previous commit
+# f, fixup <commit> = like "squash", but discard this commit's log message
+# x, exec <command> = run command (the rest of the line) using shell
+# d, drop <commit> = remove commit
+# l, label <label> = label current HEAD with a name
+# t, reset <label> = reset HEAD to a label
+# m, merge [-C <commit> | -c <commit>] <label> [# <oneline>]
+# .       create a merge commit using the original merge commit's
+# .       message (or the oneline, if no original merge commit was
+# .       specified). Use -c <commit> to reword the commit message.
+# These lines can be re-ordered; they are executed from top to bottom.
+#
+# If you remove a line here THAT COMMIT WILL BE LOST.
+#
+#	However, if you remove everything, the rebase will be aborted.
+```
+
+</small></small>
+
+---
+
+## git rebase interactive - commands
+
+<small>
+  
+**pick**
+use commit 
+==default, use the commit as is==
+
+**reword**
+use commit, but edit the commit message
+==do not change the message in the todo file, you will be prompted for a new message==
+
+**edit**
+use commit, but stop for amending
+==can be used to add, remove or change files in the commit<br/>you will have to **git commit --amend** followed by **git rebase --continue** to complete this step==
+
+</small>
+
+---
+
+## git rebase interactive - commands
+
+<small>
+  
+**squash**  
+use commit, but meld into previous commit
+==can be used to combine multiple commits into one<br/>you will be prompted for which commit message to keep==
+
+**fixup**
+like "squash", but discard this commit's log message
+==skip the prompt for the commit message if the first message is the one you would like to keep==
+  
+</small>
+
+---
+
+## git rebase interactive - commands
+
+<small>
+  
+**drop**
+remove commit
+==e.g. remove merge commits that become irrelevant after rebasing==
+  
+**label**
+label current HEAD with a name
+==can be used to add a label in between commits==
+ 
+</small>
 
 ---
 
