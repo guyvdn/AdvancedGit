@@ -243,7 +243,7 @@ also make the Working Directory look HEAD
 
 ---
 
-## git reset - demo
+# git reset - demo
 
 ---
 
@@ -522,6 +522,85 @@ Add this file to your `.config` file as such
 
 - Properly configure Git
 - Advanced Git commands 
+- **Customize Git with Git Hooks**
+- Further Reading
+
+---
+
+<!-- footer: Customize Git with Git Hooks-->
+
+# Git hooks
+
+ Git has a way to fire off custom scripts when certain important actions occur. 
+ 
+ **Client-side** hooks are triggered by operations such as committing and merging.
+ 
+ **Server-side** hooks run on network operations such as receiving pushed commits.
+
+---
+
+# Git hooks - samples
+
+<small>
+
+Some samples can already be found in the .git\hooks folder
+
+```text
+applypatch-msg.sample
+commit-msg.sample
+fsmonitor-watchman.sample
+post-update.sample
+pre-applypatch.sample
+pre-commit.sample
+pre-push.sample
+pre-rebase.sample
+pre-receive.sample
+prepare-commit-msg.sample
+update.sample
+```
+
+</small>
+
+---
+
+<small> 
+  
+# Git hooks - commit-msg example
+
+<small>
+  
+A sample ruby script that will check if the commit message starts with a Jira ticket number.
+
+```ruby
+#!/usr/bin/env ruby
+message_file = ARGV[0]
+message = File.read(message_file)
+
+$regex = /JIRA-(\d+) .+/
+
+if !$regex.match(message)
+  puts "[ERROR] Your message should start with a Jira ticket number."
+  exit 1
+end
+```
+
+When executed in the console it will look like this and the commit is not completed.
+
+```console
+$ git commit -m blah
+[ERROR] Your message should start with a Jira ticket number.
+```
+
+</small></small>
+
+---
+
+# Agenda
+<!-- footer: -->
+<!-- *template: invert -->
+
+- Properly configure Git
+- Advanced Git commands 
 - Customize Git with Git Hooks
 - **Further Reading**
 
@@ -547,8 +626,9 @@ Add this file to your `.config` file as such
 </small>
 
 **Pro Git book**<small>
-  https://git-scm.com/book</br>Free book by **Scott Chacon** and **Ben Straub**. Also available on amazon.com
-  </small>
+  https://git-scm.com/book
+  Free book by Scott Chacon and Ben Straub. Also available on amazon.com
+</small>
   
 </small></small>
 
