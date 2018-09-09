@@ -9,7 +9,9 @@ Advanced
 
 ---
 
-# Agenda
+<!-- footer: Guy Van den Nieuwenhof - Advanced Git -->
+
+# Advanced Git
 
 - Properly configure Git
 - Advanced Git commands 
@@ -18,7 +20,7 @@ Advanced
 
 ---
 
-# Agenda
+# Advanced Git
 
 <!-- *template: invert -->
 
@@ -29,6 +31,8 @@ Advanced
 
 ---
 
+<!-- footer: Guy Van den Nieuwenhof - Advanced Git - Properly configure Git -->
+
 # Properly configure Git
 
 1. Files
@@ -38,8 +42,6 @@ Advanced
 5. Checking Your Settings
 
 ---
-
-<!-- footer: Properly configure Git -->
 
 ## Files
 
@@ -90,15 +92,19 @@ https://git-scm.com/download/win
 
 ---
 ## Editors
+
 <small>
   
 **Text Editor**
+
 ```console
 $ git config --global core.editor ✂
 "'C:/Program Files (x86)/Notepad++/notepad++.exe' ✂
 -multiInst -notabbar -nosession"
 ```
+
 **Merge and Diff Tool**
+
 ```console
 $ git config --global --add merge.tool kdiff3
 $ git config --global --add mergetool.kdiff3.path "C:/../kdiff3.exe"
@@ -108,11 +114,13 @@ $ git config --global --add diff.guitool kdiff3
 $ git config --global --add difftool.kdiff3.path "C:/../kdiff3.exe"
 $ git config --global --add difftool.kdiff3.trustExitCode false
 ```
+
 </small>
 
 ---
 
 ## Checking Your Settings
+
 <small>  
   
 If you want to check your configuration settings, you can use the `git config --list` command to list all the settings Git can find at that point.
@@ -130,6 +138,7 @@ You may see keys more than once, because Git reads the same key from different f
 ---
 
 ## Checking Your Settings
+
 <small>  
   
 You can also check what Git thinks a specific key’s value is by typing `git config <key>`
@@ -141,10 +150,10 @@ John Doe
 </small>
 
 ---
-<!-- footer: -->
+<!-- footer: Guy Van den Nieuwenhof - Advanced Git -->
 <!-- *template: invert -->
 
-# Agenda
+# Advanced Git
 
 - Properly configure Git
 - **Advanced Git commands**
@@ -152,6 +161,8 @@ John Doe
 - Further Reading
 
 ---
+
+<!-- footer: Guy Van den Nieuwenhof - Advanced Git - Advanced Git commands -->
 
 # Advanced Git commands
 
@@ -162,8 +173,6 @@ John Doe
 5. git alias
 
 ---
-
-<!-- footer: Advanced Git commands-->
 
 ## git log
 <small><small>
@@ -516,8 +525,8 @@ Add this file to your `.config` file as such
 
 ---
 
-# Agenda
-<!-- footer: -->
+# Advanced Git
+<!-- footer: Guy Van den Nieuwenhof - Advanced Git -->
 <!-- *template: invert -->
 
 - Properly configure Git
@@ -527,7 +536,7 @@ Add this file to your `.config` file as such
 
 ---
 
-<!-- footer: Customize Git with Git Hooks-->
+<!-- footer: Guy Van den Nieuwenhof - Advanced Git - Customize Git with Git Hooks-->
 
 # Git hooks
 
@@ -595,8 +604,8 @@ $ git commit -m blah
 
 ---
 
-# Agenda
-<!-- footer: -->
+# Advanced Git
+<!-- footer: Guy Van den Nieuwenhof - Advanced Git -->
 <!-- *template: invert -->
 
 - Properly configure Git
@@ -608,6 +617,7 @@ $ git commit -m blah
 ---
 ## Further Reading
 
+<!-- footer: Guy Van den Nieuwenhof - Advanced Git - Further Reading-->
 <small><small>
   
 **Git Reference Manual**<small>

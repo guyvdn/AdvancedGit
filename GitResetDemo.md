@@ -1,6 +1,10 @@
-# Git Reset Scenario
+# Git Reset Demo
+
+###### Created by Guy Van den Nieuwenhof<br/>[https://github.com/guyvdn](https://github.com/guyvdn)
 
 ---
+
+<!-- footer: Guy Van den Nieuwenhof - Advanced Git - Git Reset Demo -->
 
 ### Initialize Working folder
 
