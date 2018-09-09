@@ -249,13 +249,13 @@ also make the Working Directory look HEAD
 
 # git rebase interactive
 
+<small>
+  
 **git rebase --interactive**
 **git rebase -i**
 
 Make a list of the commits which are about to be rebased. Let the user edit that list before rebasing.
 
-<small>
-  
 <br/><br/>
  
 ```text
@@ -355,6 +355,106 @@ label current HEAD with a name
 
 ---
 
+## git worktree
+
+<small>
+  
+Manage multiple working trees attached to the same repository.
+
+A git repository can support multiple working trees, allowing you to check out more than one branch at a time
+
+This new working tree is called a "**linked working tree**" as opposed to the "**main working tree**" prepared by "**git init**" or "**git clone**"
+
+A repository has one main working tree and zero or more linked working trees.
+
+</small>
+
+---
+
+## git worktree - commands
+
+<small>  
+
+**add**
+```console
+git worktree add <path> <remote>/<branch>
+```
+<small> 
+  
+Create \<path> and checkout into it. The new working directory is linked to the current repository, sharing everything except working directory specific files such as HEAD, index, etc. 
+
+Every branch can only exist in one worktree. You can create a new branch with the option `-b <branch>`
+
+</small> 
+
+**list**
+<small> 
+  
+List details of each worktree. The main worktree is listed first, followed by each of the linked worktrees.
+
+</small> 
+
+</small>
+
+---
+
+## git worktree - commands
+
+<small>  
+  
+**lock**
+
+<small>  
+  
+Prevent it from being pruned automatically in case it is on a portable device or networkshare which is not always mounted. 
+Also prevents it from being moved or deleted.
+ 
+</small>
+
+**move**
+
+<small> 
+  
+Move a working tree to a new location. 
+ 
+</small>
+ 
+</small>
+
+---
+
+## git worktree - commands
+
+<small>  
+
+**unlock**
+
+<small>  
+  
+Unlock a working tree, allowing it to be pruned, moved or deleted.
+
+</small>
+
+**remove**
+
+<small> 
+  
+Remove a working tree. Only clean working trees (no untracked files and no modification in tracked files) can be removed. Unclean working trees or ones with submodules can be removed with --force. The main working tree cannot be removed.
+
+</small>
+  
+**prune**
+
+<small> 
+  
+Prune working tree information in $GIT_DIR/worktrees.
+
+</small>
+ 
+</small>
+
+---
+
 ## git alias
 <small> 
   
@@ -415,7 +515,6 @@ Add this file to your `.config` file as such
 ```
 
 ---
-
 
 # Agenda
 <!-- footer: -->
