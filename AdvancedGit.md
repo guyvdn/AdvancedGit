@@ -358,7 +358,7 @@ remove commit
   
 **label**
 label current HEAD with a name
-==can be used to add a label in between commits==
+==to create a reference that can later be used==
  
 </small>
 
@@ -420,12 +420,12 @@ Also prevents it from being moved or deleted.
  
 </small>
 
-**move**
+**unlock**
 
-<small> 
+<small>  
   
-Move a working tree to a new location. 
- 
+Unlock a working tree, allowing it to be pruned, moved or deleted.
+
 </small>
  
 </small>
@@ -436,12 +436,12 @@ Move a working tree to a new location.
 
 <small>  
 
-**unlock**
+**move**
 
-<small>  
+<small> 
   
-Unlock a working tree, allowing it to be pruned, moved or deleted.
-
+Move a working tree to a new location. 
+ 
 </small>
 
 **remove**
@@ -604,6 +604,44 @@ $ git commit -m blah
 
 ---
 
+<small>
+  
+# Stash unstaged changes before running tests
+  
+Ensure that code that isn’t part of the commit isn’t tested within your pre-commit script.
+
+```sh
+# pre-commit.sh
+STASH_NAME="pre-commit-$(date +%s)"
+git stash save -q --keep-index $STASH_NAME
+
+# Test prospective commit
+...
+
+STASHES=$(git stash list)
+if [[ $STASHES == "$STASH_NAME" ]]; then
+  git stash pop -q
+fi
+```
+
+</small>
+
+---
+
+<small>
+  
+# Skip the pre-commit hook
+
+```console
+git commit --no-verify
+```
+
+This option bypasses the pre-commit and commit-msg hooks
+
+</small>
+
+---
+
 # Advanced Git
 <!-- footer: Guy Van den Nieuwenhof - Advanced Git -->
 <!-- *template: invert -->
@@ -615,10 +653,13 @@ $ git commit -m blah
 
 
 ---
+
+<small>
+  
 ## Further Reading
 
 <!-- footer: Guy Van den Nieuwenhof - Advanced Git - Further Reading-->
-<small><small>
+<small>
   
 **Git Reference Manual**<small>
   https://git-scm.com/docs
@@ -639,6 +680,9 @@ $ git commit -m blah
   https://git-scm.com/book
   Free book by Scott Chacon and Ben Straub. Also available on amazon.com
 </small>
-  
+
+**Pluralsight - Mastering Git**  Paolo Perrotta<small> https://app.pluralsight.com/library/courses/mastering-git/
+</small>
+
 </small></small>
 
