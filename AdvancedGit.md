@@ -364,6 +364,10 @@ label current HEAD with a name
 
 ---
 
+# git rebase interactive - demo
+
+---
+
 ## git worktree
 
 <small>
