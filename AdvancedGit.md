@@ -471,7 +471,7 @@ Prune working tree information in $GIT_DIR/worktrees.
 ## git alias
 <small> 
   
-Now that we have seen some advanced commands we can make it easier to use them wit `git alias`. 
+Now that we have seen some advanced commands we can make it easier to use them with `git alias`. 
 
 For example, to correct the usability problem you encountered with unstaging a file you can add your own unstage alias to Git:
 
